@@ -13,6 +13,7 @@
   transition: 0.2s;
   margin-bottom: 4px;
   box-sizing: border-box;
+  font-size: 1rem;
 }
 
 .input:focus {
