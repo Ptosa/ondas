@@ -7,6 +7,7 @@ import Button from '../../components/Button/Button';
 import useForm from '../../hooks/useForm/useForm';
 import checkinService from '../../services/checkinService';
 import Checkbox from '../../components/Checkbox/Checkbox';
+import { useNavigate } from 'react-router-dom';
 
 const Checkin = () => {
   const name = useForm();
@@ -15,6 +16,7 @@ const Checkin = () => {
   const teacher = useForm();
   const currentDateTime = new Date().toLocaleString();
   const [form, setForm] = React.useState(null);
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -33,6 +35,7 @@ const Checkin = () => {
         currentDateTime: currentDateTime,
       }).addToExcel();
       setForm(true);
+      navigate('/ondas/checkin');
     }
   };
 
