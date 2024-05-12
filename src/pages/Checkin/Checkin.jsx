@@ -54,7 +54,7 @@ const Checkin = () => {
           {...name}
         />
         <Input
-          label="Quanto(s) filho(s) de menor. Caso não tenha, digite: 0"
+          label="Quanto(s) filho(s) com idade inferior a 18 anos ? Caso não tenha, digite: 0"
           id="amountChilds"
           required
           placeholder="Informe a quantidade. Ex: 2"
