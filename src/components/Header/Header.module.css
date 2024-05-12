@@ -8,6 +8,7 @@
   color: var(--color-p1);
   padding: var(--space-020); 
   gap: var(--space-008);
+  flex-wrap: wrap;
 }
 
 .menu {
@@ -16,6 +17,10 @@
   gap: var(--space-016);
 }
 
-
+@media (max-width: 800px) {
+  nav {
+    padding: var(--space-020);
+  }
+}
 
 

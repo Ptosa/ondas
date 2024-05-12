@@ -1,6 +1,6 @@
 const excelService = (props) => {
   const addToExcel = () => {
-    fetch('http://localhost:5000/adicionar', {
+    fetch('https://ondasback-production.up.railway.app/adicionar', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -17,7 +17,9 @@ const excelService = (props) => {
   };
   const downloadExcel = async () => {
     try {
-      const response = await fetch('http://localhost:5000/download');
+      const response = await fetch(
+        'https://ondasback-production.up.railway.app/download',
+      );
       const blob = await response.blob();
 
       // Criar um URL temporário e clicar nele para iniciar o download

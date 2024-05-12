@@ -10,8 +10,8 @@ const Button = ({ children, form, ...props }) => {
         disabled={form ? true : false}
         style={
           form
-            ? { backgroundColor: 'green', color: '#fff' }
-            : { backgroundColor: '#83ADBE' }
+            ? { backgroundColor: 'green', color: '#fff', marginTop: '20px' }
+            : { backgroundColor: '#83ADBE', marginTop: '20px' }
         }
       >
         {children}

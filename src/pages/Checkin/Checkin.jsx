@@ -6,6 +6,7 @@ import styles from './Checkin.module.css';
 import Button from '../../components/Button/Button';
 import useForm from '../../hooks/useForm/useForm';
 import checkinService from '../../services/checkinService';
+import Checkbox from '../../components/Checkbox/Checkbox';
 
 const Checkin = () => {
   const name = useForm();
@@ -21,13 +22,14 @@ const Checkin = () => {
       name.validate() &&
       amountChilds.validate() &&
       nameChilds.validate() &&
-      teacher.validate()
+      teacher.checkbox.length
     ) {
+      console.log(teacher.checkbox.join(' e '));
       checkinService({
         name: name.value,
         amountChilds: amountChilds.value,
         nameChilds: nameChilds.value,
-        teacher: teacher.value,
+        teacher: teacher.checkbox.join(' e '),
         currentDateTime: currentDateTime,
       }).addToExcel();
       setForm(true);
@@ -55,7 +57,7 @@ const Checkin = () => {
           label="Quanto(s) filho(s) de menor"
           id="amountChilds"
           required
-          placeholder={0}
+          placeholder="Informe a quantidade. Ex: 2"
           type="number"
           {...amountChilds}
         />
@@ -67,14 +69,8 @@ const Checkin = () => {
           type="text"
           {...nameChilds}
         />
-        <Input
-          label="Professor"
-          id="teacher"
-          required
-          placeholder="O nome do professor."
-          type="text"
-          {...teacher}
-        />
+        <p>Professor</p>
+        <Checkbox options={['Pr. Júnior', 'Pr. Franklin']} {...teacher} />
         <Button disabled form={form}>
           {form ? 'Dados Enviado...' : 'Enviar'}
         </Button>

@@ -16,6 +16,7 @@ const useForm = (type) => {
   const [value, setValue] = React.useState('');
   const [error, setError] = React.useState(null);
   const [inputBorderColor, setInputBorderColor] = React.useState('');
+  const [checkbox, setCheckbox] = React.useState([]);
 
   const validate = (value) => {
     if (type === false) return true;
@@ -39,6 +40,16 @@ const useForm = (type) => {
     setValue(target.value);
   };
 
+  const onChangeCheckbox = ({ target }) => {
+    if (target.checked) {
+      setCheckbox([...checkbox, target.value]);
+    } else {
+      setCheckbox(
+        checkbox.filter((itemCheckbox) => itemCheckbox !== target.value),
+      );
+    }
+  };
+
   return {
     value,
     setValue,
@@ -47,6 +58,9 @@ const useForm = (type) => {
     onBlur: () => validate(value),
     validate: () => validate(value),
     inputBorderColor,
+    checkbox,
+    setCheckbox,
+    onChangeCheckbox,
   };
 };
 

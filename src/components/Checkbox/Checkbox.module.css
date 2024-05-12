@@ -1,0 +1,5 @@
+.label {
+  display: flex;
+  gap: var(--space-004);
+  padding: var(--space-004);
+}
