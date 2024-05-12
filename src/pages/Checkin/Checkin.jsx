@@ -39,7 +39,12 @@ const Checkin = () => {
     }
   };
 
-  if (form) return 'Dados enviado. Aperte f5';
+  if (form)
+    return (
+      <h1 className={`container`} style={{ color: 'green' }}>
+        Dados enviado. Aperte f5 ou atualize a página.
+      </h1>
+    );
   return (
     <>
       <Head
