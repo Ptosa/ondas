@@ -1,0 +1,34 @@
+.mainBg {
+  background-color: var(--color-p2);
+}
+
+.content {
+  padding: var(--space-036);
+}
+
+.content p {
+  font-size: 1.3125;
+  line-height: 1.52;
+}
+
+.accordion {
+  padding-bottom: var(--space-036);
+}
+
+.accordionItem {
+  padding: var(--space-020) 0px;
+  border: 1px solid var(--color-p3);
+}
+
+.accordionItem:first-child {
+  margin-bottom: var(--space-036);
+}
+
+.accordionItem h2 {
+  margin-bottom: var(--space-008);
+}
+
+.accordionItem p {
+  font-size: 1.3125;
+  line-height: 1.52;
+}

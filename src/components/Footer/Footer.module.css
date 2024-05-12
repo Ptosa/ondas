@@ -1,0 +1,9 @@
+.footerBg {
+  background-color: var(--color-p8);
+}
+
+.development {
+  color: var(--color-p1);
+  padding: var(--space-048);
+  text-align: center;
+}

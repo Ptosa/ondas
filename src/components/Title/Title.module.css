@@ -1,0 +1,11 @@
+.title {
+  padding: var(--space-032);
+  color: var(--color-p1);
+  font-size: 2.875rem;
+  line-height: 1.22;
+}
+
+.titleBg {
+  background-image: url("../../assets/onda.png");
+  background-position: end;
+}

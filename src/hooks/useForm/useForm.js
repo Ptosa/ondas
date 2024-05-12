@@ -1,0 +1,53 @@
+import React from 'react';
+
+const types = {
+  telephone: {
+    regex: /^\(?[1-9]{2}\)? ?(?:[2-8]|9[0-9])[0-9]{3}\-?[0-9]{4}$/,
+    message: 'Telefone inválido.',
+  },
+  email: {
+    regex:
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+    message: 'Email inválido.',
+  },
+};
+
+const useForm = (type) => {
+  const [value, setValue] = React.useState('');
+  const [error, setError] = React.useState(null);
+  const [inputBorderColor, setInputBorderColor] = React.useState('');
+
+  const validate = (value) => {
+    if (type === false) return true;
+    if (value.length === 0) {
+      setError('Preencha um valor pois este campo é obrigatório.');
+      setInputBorderColor('red');
+      return false;
+    } else if (types[type] && !types[type].regex.test(value)) {
+      setError(types[type].message);
+      setInputBorderColor('red');
+      return false;
+    } else {
+      setError(null);
+      setInputBorderColor('green');
+      return true;
+    }
+  };
+
+  const onChange = ({ target }) => {
+    if (error) validate(target.value);
+    setValue(target.value);
+  };
+
+  return {
+    value,
+    setValue,
+    error,
+    onChange,
+    onBlur: () => validate(value),
+    validate: () => validate(value),
+    inputBorderColor,
+  };
+};
+
+export default useForm;

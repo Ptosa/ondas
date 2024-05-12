@@ -1,0 +1,9 @@
+.button {
+  padding: var(--space-008) var(--space-016);
+  background-color: var(--color-s1);
+  border: none;
+  text-transform: uppercase;
+  color: var(--color-p9);
+  cursor: pointer;
+  display: block;
+}

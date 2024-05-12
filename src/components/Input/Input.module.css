@@ -1,0 +1,23 @@
+.label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.input {
+  display: block;
+  border: 1px solid #ccc;
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 4px;
+  background-color: #eee;
+  transition: 0.2s;
+  margin-bottom: 4px;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-s1);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px var(--color-p1);
+}

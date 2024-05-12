@@ -1,0 +1,21 @@
+.headerBg {
+  background-color: var(--color-p9);
+}
+
+.networks {
+  display: flex;
+  align-items: center;
+  color: var(--color-p1);
+  padding: var(--space-020); 
+  gap: var(--space-008);
+}
+
+.menu {
+  color: var(--color-p1);
+  display: flex;
+  gap: var(--space-016);
+}
+
+
+
+
