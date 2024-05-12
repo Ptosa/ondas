@@ -70,10 +70,7 @@ const Checkin = () => {
           {...nameChilds}
         />
         <p>Professor (Selecione no mínimo um)</p>
-        <Checkbox
-          options={['Pr. Júnior', 'Pr. Franklin', 'Outro']}
-          {...teacher}
-        />
+        <Checkbox options={['Lídia', 'Silvia', 'Outro']} {...teacher} />
         <Button disabled form={form}>
           {form ? 'Dados Enviado...' : 'Enviar'}
         </Button>
