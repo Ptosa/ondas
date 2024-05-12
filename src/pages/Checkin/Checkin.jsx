@@ -39,6 +39,7 @@ const Checkin = () => {
     }
   };
 
+  if (form) return 'Dados enviado. Aperte f5';
   return (
     <>
       <Head
