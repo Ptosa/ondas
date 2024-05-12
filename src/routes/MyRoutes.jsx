@@ -13,7 +13,7 @@ const MyRoutes = () => {
       <Header />
       <Routes>
         <Route path="/ondas/" element={<Home />} />
-        <Route path="/ondas/ficha-de-inscricao" element={<ApplicationForm />} />
+        {/* <Route path="/ondas/ficha-de-inscricao" element={<ApplicationForm />} /> */}
         <Route path="/ondas/admin" element={<Admin />} />
         <Route path="/ondas/checkin" element={<Checkin />} />
       </Routes>

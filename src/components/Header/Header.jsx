@@ -28,7 +28,7 @@ const Header = () => {
           <NavLink to="/ondas/" end>
             Home
           </NavLink>
-          <NavLink to="/ondas/ficha-de-inscricao">Ficha de inscrição</NavLink>
+          {/* <NavLink to="/ondas/ficha-de-inscricao">Ficha de inscrição</NavLink> */}
           <NavLink to="/ondas/admin">Administração</NavLink>
           <NavLink to="/ondas/checkin">Checkin</NavLink>
         </ul>

@@ -15,9 +15,9 @@ const Admin = () => {
       />
       <Title>Administração</Title>
       <section className={`${styles.content} container`}>
-        <Button onClick={() => excelService().downloadExcel()}>
+        {/* <Button onClick={() => excelService().downloadExcel()}>
           Download Excel
-        </Button>
+        </Button> */}
         <Button onClick={() => checkinService().downloadExcel()}>
           Download Excel Checkin
         </Button>

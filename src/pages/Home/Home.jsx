@@ -35,9 +35,9 @@ const Home = () => {
             (nome completo, telefone, e-mail e endereço) através do botão
             abaixo.
           </p>
-          <Link to="ficha-de-inscricao">
+          {/* <Link to="ficha-de-inscricao">
             <Button>Ficha de inscrição</Button>
-          </Link>
+          </Link> */}
         </div>
         <div className={`${styles.accordionItem}`}>
           <h2>Como faço para realizar o curso ?</h2>
