@@ -2,18 +2,22 @@ import React from 'react';
 import Head from '../../hooks/Head/Head';
 import Title from '../../components/Title/Title';
 import Input from '../../components/Input/Input';
-import styles from './Checkin.module.css';
+import styles from './CheckinForm.module.css';
 import Button from '../../components/Button/Button';
 import useForm from '../../hooks/useForm/useForm';
 import checkinService from '../../services/checkinService';
 import Checkbox from '../../components/Checkbox/Checkbox';
 import { useNavigate } from 'react-router-dom';
+import InputRadio from '../../components/InputRadio/InputRadio';
+import excelService from '../../services/excelService';
+import DataSent from '../../components/DataSent/DataSent';
 
-const Checkin = () => {
+const CheckinForm = () => {
   const name = useForm();
   const amountChilds = useForm();
   const nameChilds = useForm();
   const teacher = useForm();
+  const numberOfClass = useForm();
   const currentDateTime = new Date().toLocaleString();
   const [form, setForm] = React.useState(null);
   const navigate = useNavigate();
@@ -24,14 +28,15 @@ const Checkin = () => {
       name.validate() &&
       amountChilds.validate() &&
       nameChilds.validate() &&
-      teacher.checkbox.length
+      teacher.validate() &&
+      numberOfClass.validate()
     ) {
-      console.log(teacher.checkbox.join(' e '));
       checkinService({
         name: name.value,
         amountChilds: amountChilds.value,
         nameChilds: nameChilds.value,
-        teacher: teacher.checkbox.join(' e '),
+        teacher: teacher.value,
+        numberOfClass: numberOfClass.value,
         currentDateTime: currentDateTime,
       }).addToExcel();
       setForm(true);
@@ -39,12 +44,7 @@ const Checkin = () => {
     }
   };
 
-  if (form)
-    return (
-      <h1 className={`container`} style={{ color: 'green' }}>
-        Dados enviado. Aperte f5 ou atualize a página.
-      </h1>
-    );
+  if (form) return <DataSent />;
   return (
     <>
       <Head
@@ -78,8 +78,29 @@ const Checkin = () => {
           type="text"
           {...nameChilds}
         />
-        <p>Professor (Selecione no mínimo um)</p>
-        <Checkbox options={['Lídia', 'Silvia', 'Outro']} {...teacher} />
+        {/* <p>Professor (Selecione no mínimo um)</p> */}
+        {/* <Checkbox options={['Lídia', 'Silvia', 'Outro']} {...teacher} /> */}
+        <p>Professor: </p>
+        <InputRadio
+          options={[
+            { id: 1, name: 'Pr Júnior' },
+            { id: 2, name: 'Pr Franklin' },
+            { id: 3, name: 'Lídia' },
+            { id: 4, name: 'Silvia' },
+            { id: 5, name: 'Outro' },
+          ]}
+          {...teacher}
+        />
+        <p>Aula: </p>
+        <InputRadio
+          options={[
+            { id: 1, name: 'Aula 01' },
+            { id: 2, name: 'Aula 02' },
+            { id: 3, name: 'Aula 03' },
+            { id: 4, name: 'Aula 04' },
+          ]}
+          {...numberOfClass}
+        />
         <Button disabled form={form}>
           {form ? 'Dados Enviado...' : 'Enviar'}
         </Button>
@@ -88,4 +109,4 @@ const Checkin = () => {
   );
 };
 
-export default Checkin;
+export default CheckinForm;

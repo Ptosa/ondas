@@ -1,0 +1,11 @@
+.sent {
+  padding: var(--space-120) 0px; 
+}
+
+.sentData {
+  padding: var(--space-120) 0px; 
+  background-color: #9efd9e;
+  border-left: 20px solid #ddfada;
+  text-align: center;
+  margin-bottom: var(--space-060);
+}

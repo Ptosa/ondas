@@ -15,6 +15,13 @@
   color: var(--color-p1);
   display: flex;
   gap: var(--space-016);
+  flex-wrap: wrap;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 800px) {

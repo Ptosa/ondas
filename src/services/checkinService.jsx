@@ -1,6 +1,6 @@
 const checkinService = (props) => {
   const addToExcel = () => {
-    fetch('https://ondasback-production.up.railway.app/adicionarCheckin', {
+    fetch('https://ondasback-production.up.railway.app/addCheckinExcel', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -9,7 +9,7 @@ const checkinService = (props) => {
     })
       .then((response) => response.text())
       .then((data) => {
-        console.log(data); // Exibirá "Dado adicionado com sucesso!"
+        console.log(data);
       })
       .catch((error) => {
         console.error('Erro:', error);
@@ -18,19 +18,17 @@ const checkinService = (props) => {
   const downloadExcel = async () => {
     try {
       const response = await fetch(
-        'https://ondasback-production.up.railway.app/downloadCheckin',
+        'https://ondasback-production.up.railway.app/downloadCheckinExcel',
       );
       const blob = await response.blob();
 
-      // Criar um URL temporário e clicar nele para iniciar o download
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = 'checkin.xlsx';
+      a.download = 'checkinTeste.xlsx';
       document.body.appendChild(a);
       a.click();
 
-      // Remover o URL temporário após o download
       window.URL.revokeObjectURL(url);
       document.body.removeChild(a);
     } catch (error) {
@@ -38,9 +36,26 @@ const checkinService = (props) => {
       alert('Erro ao baixar o arquivo XLSX.');
     }
   };
+
+  const dataCheckinExcel = async () => {
+    const response = await fetch(
+      'https://ondasback-production.up.railway.app/dataCheckinExcel',
+    );
+    const json = await response.json();
+    return json;
+  };
+
+  const updateChamadaExcel = async () => {
+    const response = await fetch(
+      'https://ondasback-production.up.railway.app/updateChamadaExcel',
+    );
+    return 'Atualizado';
+  };
   return {
     addToExcel,
     downloadExcel,
+    dataCheckinExcel,
+    updateChamadaExcel,
   };
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Header.module.css';
-import ilanChurch from '../../assets/ilan-church.png';
+import ilanChurch from '../../assets/wavesSystem.png';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
@@ -23,7 +23,7 @@ const Header = () => {
         </li>
       </ul>
       <nav className={`container`}>
-        <img src={ilanChurch} alt="Ilan Church" width="200" height="100" />
+        <img src={ilanChurch} alt="Ilan Church" width="300" height="200" />
         <ul className={`${styles.menu}`}>
           <NavLink to="/ondas/" end>
             Home
@@ -31,6 +31,10 @@ const Header = () => {
           {/* <NavLink to="/ondas/ficha-de-inscricao">Ficha de inscrição</NavLink> */}
           <NavLink to="/ondas/admin">Administração</NavLink>
           <NavLink to="/ondas/checkin">Checkin</NavLink>
+          <NavLink to="/ondas/cadastro">Cadastro</NavLink>
+          <NavLink to="/ondas/buscarPessoasChamada">
+            Buscar Pessoa Chamada
+          </NavLink>
         </ul>
       </nav>
     </header>

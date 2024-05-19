@@ -17,6 +17,7 @@ const useForm = (type) => {
   const [error, setError] = React.useState(null);
   const [inputBorderColor, setInputBorderColor] = React.useState('');
   const [checkbox, setCheckbox] = React.useState([]);
+  const [data, setData] = React.useState();
 
   const validate = (value) => {
     if (type === false) return true;
@@ -50,6 +51,19 @@ const useForm = (type) => {
     }
   };
 
+  const onClick = (event) => {
+    if (event.target.id === 'name') {
+      async function planilhaDadosName() {
+        const response = await fetch(
+          'https://ondasback-production.up.railway.app/names',
+        );
+        const dataInJson = await response.json();
+        setData(dataInJson);
+      }
+      planilhaDadosName();
+    }
+  };
+
   return {
     value,
     setValue,
@@ -61,6 +75,8 @@ const useForm = (type) => {
     checkbox,
     setCheckbox,
     onChangeCheckbox,
+    onClick,
+    data,
   };
 };
 

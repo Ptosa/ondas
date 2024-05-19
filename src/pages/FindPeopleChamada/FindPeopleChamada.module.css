@@ -1,8 +1,13 @@
-.checkinFormBg {
+.findPeopleChamadaFormBg {
   background-color: var(--color-p3);
 }
 
 .form {
   background-color: var(--color-p1);
   padding: var(--space-032);
+}
+
+.table {
+  overflow-y: hidden;
+  padding: var(--space-032) 0px;
 }

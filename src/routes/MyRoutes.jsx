@@ -5,7 +5,9 @@ import Footer from '../components/Footer/Footer';
 import Home from '../pages/Home/Home';
 import ApplicationForm from '../pages/ApplicationForm/ApplicationForm';
 import Admin from '../pages/Admin/Admin';
-import Checkin from '../pages/Checkin/Checkin';
+import CheckinForm from '../pages/CheckinForm/CheckinForm';
+import RegisterForm from '../pages/RegisterForm/RegisterForm';
+import FindPeopleChamada from '../pages/FindPeopleChamada/FindPeopleChamada';
 
 const MyRoutes = () => {
   return (
@@ -15,7 +17,12 @@ const MyRoutes = () => {
         <Route path="/ondas/" element={<Home />} />
         {/* <Route path="/ondas/ficha-de-inscricao" element={<ApplicationForm />} /> */}
         <Route path="/ondas/admin" element={<Admin />} />
-        <Route path="/ondas/checkin" element={<Checkin />} />
+        <Route path="/ondas/checkin" element={<CheckinForm />} />
+        <Route path="/ondas/cadastro" element={<RegisterForm />} />
+        <Route
+          path="/ondas/buscarPessoasChamada"
+          element={<FindPeopleChamada />}
+        />
       </Routes>
       <Footer />
     </BrowserRouter>

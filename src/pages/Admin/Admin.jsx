@@ -1,10 +1,10 @@
 import React from 'react';
 import Button from '../../components/Button/Button';
-import excelService from '../../services/excelService';
 import Head from '../../hooks/Head/Head';
 import Title from '../../components/Title/Title';
 import styles from './Admin.module.css';
 import checkinService from '../../services/checkinService';
+import CheckinData from '../../components/CheckinData/CheckinData';
 
 const Admin = () => {
   return (
@@ -15,12 +15,7 @@ const Admin = () => {
       />
       <Title>Administração</Title>
       <section className={`${styles.content} container`}>
-        {/* <Button onClick={() => excelService().downloadExcel()}>
-          Download Excel
-        </Button> */}
-        <Button onClick={() => checkinService().downloadExcel()}>
-          Download Excel Checkin
-        </Button>
+        <CheckinData />
       </section>
     </>
   );

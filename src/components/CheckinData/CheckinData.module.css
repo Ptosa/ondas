@@ -1,0 +1,25 @@
+.actions {
+  display: grid;
+  justify-content: start;
+  padding: var(--space-020);
+  background-color: var(--color-p3);
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.data {
+  padding: var(--space-020);
+  background-color: var(--color-p2);
+  margin-top: var(--space-040);
+  overflow-y: hidden;
+}
+
+.table {
+  display: flex;
+  padding: var(--space-040) 0px;
+  flex-direction: column;
+}
+
+.table div {
+  display: flex;
+}
+
