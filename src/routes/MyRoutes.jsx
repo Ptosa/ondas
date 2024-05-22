@@ -8,6 +8,7 @@ import Admin from '../pages/Admin/Admin';
 import CheckinForm from '../pages/CheckinForm/CheckinForm';
 import RegisterForm from '../pages/RegisterForm/RegisterForm';
 import FindPeopleChamada from '../pages/FindPeopleChamada/FindPeopleChamada';
+import Member from '../pages/Member/Member';
 
 const MyRoutes = () => {
   return (
@@ -23,6 +24,7 @@ const MyRoutes = () => {
           path="/ondas/buscarPessoasChamada"
           element={<FindPeopleChamada />}
         />
+        <Route path="/ondas/membro" element={<Member />} />
       </Routes>
       <Footer />
     </BrowserRouter>

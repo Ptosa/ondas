@@ -35,6 +35,7 @@ const Header = () => {
           <NavLink to="/ondas/buscarPessoasChamada">
             Buscar Pessoa Chamada
           </NavLink>
+          <NavLink to="/ondas/membro">Ficha de Membro</NavLink>
         </ul>
       </nav>
     </header>
